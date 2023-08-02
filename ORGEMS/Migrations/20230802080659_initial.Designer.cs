@@ -12,7 +12,7 @@ using ORGEMS.Data;
 namespace ORGEMS.Migrations
 {
     [DbContext(typeof(ORGEMSDbContext))]
-    [Migration("20230801190226_initial")]
+    [Migration("20230802080659_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -242,8 +242,9 @@ namespace ORGEMS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LastName")
-                        .HasColumnType("int");
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MiddleName")
                         .IsRequired()
